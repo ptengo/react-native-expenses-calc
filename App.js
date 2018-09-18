@@ -18,7 +18,9 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Expenses Calc</Text>
+        <View style={styles.header}>
+          <Text>Expenses Calc</Text>
+        </View>
         <HomePage/>
       </View>
     );
@@ -32,4 +34,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  header: {
+
+  }
 });

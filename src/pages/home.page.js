@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Expense from '../components/expense.component';
-import { StyleSheet, Text, View, ListView } from 'react-native';
+import { StyleSheet, View, ListView } from 'react-native';
 
 export default class HomePage extends React.Component {
   constructor() {
@@ -63,22 +63,54 @@ export default class HomePage extends React.Component {
       //   })}
 
       // </View>
+
+      <View style={styles.content}>
+        <View style={styles.buttonGroup}>
+          <View style={styles.addButton} />
+          <View style={styles.addButton2} />
+        </View>
         <ListView
-          style={{margin: 40}}
+          style={styles.listView}
           dataSource={this.state.dataSource}
           renderRow={this.renderRow}
         />
+      </View>
+
       
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    textAlignVertical: 'center'
+  content: {
+    // flex: 1,
+    // alignItems: 'center',
+    // justifyContent: 'center',
+    flexDirection: 'row',
+    // alignItems: 'stretch'
   },
+  listView: {
+    // marginTop: 200,
+    // flex: 2
+  },
+  buttonGroup: {
+    flexDirection: 'row',
+    alignItems: 'flex-end',
+  },
+  addButton: {
+    // flex: 1,
+    width: 50,
+    // flexDirection: 'row',
+    // alignSelf: 'flex-end',
+    height: 50,
+    backgroundColor: 'powderblue'
+  },
+  addButton2: {
+    // flex: 1,
+    width: 50,
+    // flexDirection: 'row',
+    // alignSelf: 'flex-end',
+    height: 50,
+    backgroundColor: 'steelblue'
+  }
 });
